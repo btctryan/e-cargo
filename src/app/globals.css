@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-archivo);
+
+  --color-brand: #e3131b;
+  --color-brand-dark: #b30d14;
+  --color-ink: #0b0d12;
+  --color-ink-2: #141821;
+  --color-ink-3: #1d2230;
+  --color-paper: #f5f5f2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Garis halus di belakang heading section */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: currentColor;
+}
+
+/* Leaflet: samakan tampilan dengan tema website */
+html .leaflet-container {
+  font-family: var(--font-jakarta), sans-serif;
+  background: #e8eaee;
+}
+/* Peta dibuat abu-abu agar warna merah brand lebih menonjol */
+html .leaflet-container .leaflet-tile-pane {
+  filter: grayscale(1) contrast(0.9) brightness(1.05);
+}
+.leaflet-tooltip.city-tip {
+  background: var(--color-ink);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 8px;
+  box-shadow: none;
+}
+.leaflet-tooltip.city-tip::before {
+  display: none;
+}
+
+.truck-marker {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: var(--color-brand);
+  color: #fff;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 6px rgb(227 19 27 / 0.25);
+  animation: pulse 2s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(227 19 27 / 0.45); }
+  100% { box-shadow: 0 0 0 18px rgb(227 19 27 / 0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  animation: marquee 30s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .truck-marker { animation: none; }
+  html { scroll-behavior: auto; }
+}
