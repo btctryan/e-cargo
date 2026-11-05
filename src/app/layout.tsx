@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | E-Cargo",
   },
   description:
-    "PT. Ekspedisi Lintas Antar Nusa Garuda (E-Cargo): layanan air cargo, kargo darat, kargo laut FCL/LCL, dan pergudangan dari Pekanbaru ke 34 provinsi di Indonesia.",
+    "PT. Ekspedisi Lintas Antar Nusa Garuda (E-Cargo): layanan kargo udara, kargo darat, kargo laut, dan pergudangan dari Pekanbaru ke 34 provinsi di Indonesia.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

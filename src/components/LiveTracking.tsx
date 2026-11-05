@@ -36,7 +36,7 @@ export function LiveTracking({ shipment }: { shipment: Shipment }) {
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex size-2 rounded-full bg-green-400" />
           </span>
-          LIVE · update {seconds} detik lalu
+          LANGSUNG · diperbarui {seconds} detik lalu
         </div>
       </div>
       <div className="grid grid-cols-3 divide-x divide-black/10 border-t border-black/10 text-center">

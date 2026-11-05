@@ -13,7 +13,7 @@ export function Footer() {
           <p className="mt-5 text-sm leading-relaxed text-white/60">
             {company.legalName}. Melayani pengiriman ke seluruh Indonesia sejak {company.since}.
           </p>
-          <p className="mt-4 font-display text-sm font-bold uppercase tracking-wider text-brand">
+          <p className="mt-4 font-display text-sm font-bold uppercase tracking-wider text-accent">
             {company.tagline}
           </p>
         </div>

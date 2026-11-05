@@ -52,14 +52,14 @@ export default function TrackingMap({ route, progress }: { route: LatLng[]; prog
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <FitRoute route={route} />
-      <Polyline positions={route} pathOptions={{ color: "#0b0d12", weight: 4, opacity: 0.25, dashArray: "6 8" }} />
-      <Polyline positions={done} pathOptions={{ color: "#e3131b", weight: 5, opacity: 0.9 }} />
-      <CircleMarker center={start} radius={7} pathOptions={{ color: "#fff", weight: 3, fillColor: "#0b0d12", fillOpacity: 1 }}>
+      <Polyline positions={route} pathOptions={{ color: "#1a0f0b", weight: 4, opacity: 0.25, dashArray: "6 8" }} />
+      <Polyline positions={done} pathOptions={{ color: "#d40202", weight: 5, opacity: 0.9 }} />
+      <CircleMarker center={start} radius={7} pathOptions={{ color: "#fff", weight: 3, fillColor: "#1a0f0b", fillOpacity: 1 }}>
         <Tooltip className="city-tip" direction="top" offset={[0, -8]} permanent>
           Asal
         </Tooltip>
       </CircleMarker>
-      <CircleMarker center={end} radius={7} pathOptions={{ color: "#fff", weight: 3, fillColor: "#e3131b", fillOpacity: 1 }}>
+      <CircleMarker center={end} radius={7} pathOptions={{ color: "#fff", weight: 3, fillColor: "#d40202", fillOpacity: 1 }}>
         <Tooltip className="city-tip" direction="top" offset={[0, -8]} permanent>
           Tujuan
         </Tooltip>

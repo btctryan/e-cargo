@@ -8,7 +8,7 @@ import { findShipment } from "@/lib/shipments";
 
 export const metadata: Metadata = {
   title: "Lacak Kiriman",
-  description: "Lacak posisi kiriman E-Cargo secara real-time dengan nomor resi.",
+  description: "Lacak posisi kiriman E-Cargo secara langsung dengan nomor resi.",
 };
 
 export default function LacakPage(props: PageProps<"/lacak">) {
@@ -26,18 +26,18 @@ function TrackingShell({ query = "", children }: { query?: string; children?: Re
     <>
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
-          <span className="eyebrow">Lacak Kiriman</span>
+          <span className="eyebrow on-dark">Lacak Kiriman</span>
           <h1 className="mt-4 font-display text-4xl font-extrabold uppercase tracking-tight sm:text-5xl [font-stretch:110%]">
             Di mana kiriman saya?
           </h1>
           <p className="mt-3 max-w-xl text-white/60">
-            Masukkan nomor resi untuk melihat status dan posisi truk secara real-time.
+            Masukkan nomor resi untuk melihat status dan posisi truk secara langsung.
           </p>
           <div className="mt-8 max-w-2xl">
             <TrackForm key={query} defaultValue={query} dark />
           </div>
           <p className="mt-4 flex items-center gap-2 text-xs text-white/50">
-            <Info size={14} /> Prototipe: coba resi demo <strong className="text-white">EC-2026-0001</strong>
+            <Info size={14} /> Contoh: coba nomor resi <strong className="text-white">EC-2026-0001</strong>
           </p>
         </div>
       </section>

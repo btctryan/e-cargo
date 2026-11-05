@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Clock, Map as MapIcon, Plane, Quote, ShieldCheck, Ship, Truck, Warehouse } from "lucide-react";
+import { ArrowRight, Check, Clock, Map as MapIcon, Plane, ShieldCheck, Ship, Truck, Warehouse } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { TrackForm } from "@/components/TrackForm";
 import { CoverageMap } from "@/components/maps";
@@ -52,7 +52,7 @@ function SectionHeading({
 }) {
   return (
     <Reveal className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <span className="eyebrow">{eyebrow}</span>
+      <span className={light ? "eyebrow on-dark" : "eyebrow"}>{eyebrow}</span>
       <h2
         className={`mt-4 font-display text-3xl font-extrabold uppercase leading-[1.05] tracking-tight [font-stretch:112%] sm:text-5xl ${
           light ? "text-white" : "text-ink"
@@ -81,14 +81,14 @@ function Hero() {
 
       <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-16 pt-32 sm:px-6">
         <Reveal>
-          <p className="eyebrow">
+          <p className="eyebrow on-dark">
             {company.tagline} · Sejak {company.since}
           </p>
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className="mt-6 max-w-3xl font-display text-[2.6rem] font-black uppercase leading-[0.95] tracking-tight [font-stretch:105%] sm:text-6xl sm:[font-stretch:115%] xl:text-7xl">
             Melayani Indonesia
-            <span className="block text-brand">dengan keandalan</span>
+            <span className="block text-accent">dengan keandalan</span>
             dan kecepatan
           </h1>
         </Reveal>
@@ -101,14 +101,6 @@ function Hero() {
         <Reveal delay={0.24} className="mt-10 max-w-xl">
           <TrackForm dark />
           <div className="mt-5 flex flex-wrap gap-3">
-            <a
-              href={company.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-ink transition-colors hover:bg-white/90"
-            >
-              <WhatsAppIcon size={18} /> Konsultasi Gratis
-            </a>
             <Link
               href="#layanan"
               className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white ring-1 ring-white/30 transition-colors hover:bg-white/10"
@@ -126,7 +118,7 @@ function Hero() {
               key={s.label}
               className={`py-6 ${i % 2 ? "pl-6" : ""} ${i > 0 ? "lg:border-l lg:border-white/10 lg:pl-8" : ""}`}
             >
-              <dd className="font-display text-3xl font-black [font-stretch:115%] sm:text-4xl">{s.value}</dd>
+              <dd className="font-display text-3xl font-black text-accent [font-stretch:115%] sm:text-4xl">{s.value}</dd>
               <dt className="mt-1 text-xs font-semibold uppercase tracking-wider text-white/50">{s.label}</dt>
             </div>
           ))}
@@ -160,8 +152,7 @@ function About() {
         <div>
           <SectionHeading eyebrow="Kata Pengantar" title="Sambutan Direktur" />
           <Reveal delay={0.1}>
-            <blockquote className="relative mt-8 border-l-4 border-brand pl-6 text-xl font-semibold leading-snug text-ink sm:text-2xl">
-              <Quote className="absolute -left-1 -top-8 text-brand/20" size={40} />
+            <blockquote className="mt-8 border-l-4 border-brand pl-6 text-xl font-semibold leading-snug text-ink sm:text-2xl">
               {director.greeting}
             </blockquote>
           </Reveal>
@@ -182,13 +173,13 @@ function About() {
 
 function Values() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 text-white">
+    <section className="relative overflow-hidden bg-brand py-24 text-white">
       <Image
         src="/images/about-sunset.jpg"
         alt=""
         fill
         sizes="100vw"
-        className="object-cover opacity-15"
+        className="object-cover opacity-10 mix-blend-multiply"
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
@@ -200,14 +191,14 @@ function Values() {
 
         <div className="mt-20">
           <Reveal>
-            <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-white/50">Nilai Utama · Core Value</h3>
+            <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-paper/70">Nilai Utama Perusahaan</h3>
           </Reveal>
-          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl bg-white/15 sm:grid-cols-2 lg:grid-cols-4">
             {coreValues.map((v, i) => (
-              <Reveal key={v.title} delay={i * 0.06} className="bg-ink-2/95 p-7">
-                <span className="font-display text-5xl font-black text-brand [font-stretch:115%]">{v.title[0]}</span>
+              <Reveal key={v.title} delay={i * 0.06} className="bg-brand-dark/90 p-7">
+                <span className="font-display text-5xl font-black text-accent [font-stretch:115%]">{v.title[0]}</span>
                 <h4 className="mt-4 text-lg font-bold">{v.title}</h4>
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{v.text}</p>
+                <p className="mt-3 text-sm leading-relaxed text-paper/80">{v.text}</p>
               </Reveal>
             ))}
           </div>
@@ -223,7 +214,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeading
-            eyebrow="Layanan Inti · Core Service"
+            eyebrow="Layanan Inti"
             title="Satu mitra untuk semua jalur kirim"
             text="Solusi logistik terpadu yang dirancang untuk mendukung kelancaran rantai pasok Anda, dari pengiriman cepat hingga distribusi yang andal."
           />
@@ -256,7 +247,7 @@ function Services() {
                   id={s.id}
                   className="grid scroll-mt-24 overflow-hidden rounded-3xl bg-white ring-1 ring-black/5 md:grid-cols-2"
                 >
-                  <div className={`relative min-h-64 ${s.icon === "truck" ? "bg-[#eef0f3]" : ""} ${flip ? "md:order-2" : ""}`}>
+                  <div className={`relative min-h-64 ${s.icon === "truck" ? "bg-[#f3ece0]" : ""} ${flip ? "md:order-2" : ""}`}>
                     <Image
                       src={s.image}
                       alt={s.title}
@@ -301,7 +292,7 @@ function WhyUs() {
     <section className="overflow-hidden bg-white py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2">
         <div>
-          <SectionHeading eyebrow="Why Choose Us" title="Mengapa memilih E-Cargo" />
+          <SectionHeading eyebrow="Keunggulan Kami" title="Mengapa memilih E-Cargo" />
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
             {reasons.map((r, i) => {
               const Icon = reasonIcons[r.icon];
@@ -316,7 +307,7 @@ function WhyUs() {
           </div>
         </div>
         <Reveal delay={0.1} className="relative">
-          <div className="absolute -right-40 top-1/2 h-72 w-[140%] -translate-y-1/2 -skew-y-6 rounded-3xl bg-brand" />
+          <div className="absolute -right-40 top-1/2 h-72 w-[140%] -translate-y-1/2 -skew-y-6 rounded-3xl bg-accent" />
           <Image
             src="/images/truck-side.png"
             alt="Armada truk E-Cargo"
@@ -336,7 +327,7 @@ function Coverage() {
     <section id="cakupan" className="scroll-mt-18 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Area Cakupan · Coverage Area"
+          eyebrow="Area Cakupan"
           title="Dari Sabang sampai Merauke"
           text="E-Cargo hadir untuk menghubungkan Indonesia. Dengan jaringan luas dan rute strategis, kami memastikan pengiriman Anda aman, tepat waktu, dan menjangkau seluruh wilayah Nusantara."
         />
@@ -350,12 +341,12 @@ function Coverage() {
               <p className="mt-1 text-sm font-semibold">Provinsi</p>
               <p className="mt-1 text-xs text-white/50">Menjangkau seluruh wilayah Indonesia.</p>
               <div className="my-6 h-px bg-white/10" />
-              <p className="font-display text-5xl font-black text-brand [font-stretch:115%]">300+</p>
+              <p className="font-display text-5xl font-black text-accent [font-stretch:115%]">300+</p>
               <p className="mt-1 text-sm font-semibold">Kota & Kabupaten</p>
               <p className="mt-1 text-xs text-white/50">Jaringan distribusi yang luas dan terus berkembang.</p>
             </div>
             <div className="rounded-3xl bg-white p-7 ring-1 ring-black/5">
-              <p className="text-xs font-bold uppercase tracking-wider text-black/40">Kota hub utama</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-black/40">Kota tujuan utama</p>
               <ul className="mt-4 flex flex-wrap gap-1.5">
                 {cities.map((c) => (
                   <li
@@ -389,9 +380,9 @@ function Team() {
     <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Struktur Manajemen" title="Tim di balik setiap kiriman" />
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {team.map((m, i) => (
-            <Reveal key={m.name} delay={(i % 5) * 0.05}>
+            <Reveal key={m.name} delay={i * 0.05}>
               <div className="h-full rounded-2xl bg-paper p-5">
                 <span
                   className={`grid size-12 place-items-center rounded-full font-display text-sm font-extrabold ${
@@ -446,7 +437,7 @@ function Cta() {
       <Reveal className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-14 sm:py-20">
         <Image src="/images/handshake.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover opacity-30" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/80 to-brand/40" />
-        <p className="eyebrow">Delivering Solutions, Connecting Indonesia</p>
+        <p className="eyebrow on-dark">Memberikan Solusi, Menghubungkan Indonesia</p>
         <h2 className="mt-4 max-w-2xl font-display text-4xl font-black uppercase leading-[1] tracking-tight [font-stretch:115%] sm:text-6xl">
           Siap kirim barang Anda hari ini?
         </h2>

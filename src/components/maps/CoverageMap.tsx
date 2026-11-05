@@ -50,7 +50,7 @@ export default function CoverageMap() {
               [hq.lat, hq.lng],
               [c.lat, c.lng],
             ]}
-            pathOptions={{ color: "#e3131b", weight: 1.2, opacity: 0.35, dashArray: "4 6" }}
+            pathOptions={{ color: "#d40202", weight: 1.2, opacity: 0.35, dashArray: "4 6" }}
           />
         ))}
       {cities.map((c) => (
@@ -61,7 +61,7 @@ export default function CoverageMap() {
           pathOptions={{
             color: "#fff",
             weight: 2,
-            fillColor: c.hq ? "#e3131b" : "#0b0d12",
+            fillColor: c.hq ? "#d40202" : "#1a0f0b",
             fillOpacity: 1,
           }}
         >

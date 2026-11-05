@@ -22,7 +22,7 @@ export type Shipment = {
 export const shipments: Record<string, Shipment> = {
   "EC-2026-0001": {
     resi: "EC-2026-0001",
-    service: "Land Transportation (LTL)",
+    service: "Kargo Darat (muatan sebagian)",
     origin: "Pekanbaru",
     destination: "Jakarta",
     sender: "CV. Riau Makmur",

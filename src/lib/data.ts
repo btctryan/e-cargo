@@ -5,7 +5,7 @@ export const company = {
   name: "E-Cargo",
   legalName: "PT. Ekspedisi Lintas Antar Nusa Garuda",
   since: 2019,
-  tagline: "Secure, Fast, and Trusted",
+  tagline: "Aman, Cepat, dan Terpercaya",
   slogan: "Menghubungkan Indonesia, Mengantarkan Kepercayaan.",
   address: "Jl. Kaharudin Nasution No. 08, Pekanbaru, Riau",
   whatsapp: "+62 811 7522 522",
@@ -17,7 +17,7 @@ export const stats = [
   { value: "2019", label: "Berdiri sejak" },
   { value: "34", label: "Provinsi terjangkau" },
   { value: "300+", label: "Kota & kabupaten" },
-  { value: "4", label: "Moda layanan" },
+  { value: "4", label: "Layanan utama" },
 ];
 
 export const director = {
@@ -27,7 +27,7 @@ export const director = {
     "Kami mengucapkan terima kasih atas kepercayaan Anda menjadikan E-Cargo sebagai mitra logistik terpercaya.",
   paragraphs: [
     "PT. Ekspedisi Lintas Antar Nusa Garuda (E-Cargo) berkomitmen untuk menghadirkan layanan logistik yang aman, tepat waktu, dan profesional di seluruh wilayah Indonesia.",
-    "Dengan dukungan armada yang andal, teknologi terkini, serta sumber daya manusia yang berintegritas, kami memastikan setiap pengiriman memberikan pengalaman terbaik bagi pelanggan.",
+    "Dengan dukungan armada yang andal serta sumber daya manusia yang berintegritas, kami memastikan setiap pengiriman memberikan pengalaman terbaik bagi pelanggan.",
     "Kepercayaan Anda adalah motivasi kami untuk terus berinovasi dan memberikan layanan terbaik, menghubungkan peluang dan mengantarkan kemajuan untuk Indonesia.",
   ],
 };
@@ -69,13 +69,13 @@ export const services: Service[] = [
   {
     id: "air-cargo",
     no: "01",
-    title: "Air Cargo",
-    subtitle: "Kargo Udara",
+    title: "Kargo Udara",
+    subtitle: "Pengiriman via pesawat",
     text: "Pengiriman via udara untuk barang yang harus tiba secepatnya, didukung jaringan maskapai yang luas.",
     points: [
-      "Pengiriman cepat untuk kargo prioritas dan urgent.",
-      "Jaringan maskapai luas dengan routing optimal.",
-      "Layanan door to door ke berbagai destinasi.",
+      "Pengiriman cepat untuk kargo prioritas dan mendesak.",
+      "Jaringan maskapai luas dengan rute yang optimal.",
+      "Layanan dari pintu ke pintu ke berbagai tujuan.",
     ],
     image: "/images/service-air.jpg",
     icon: "plane",
@@ -83,13 +83,13 @@ export const services: Service[] = [
   {
     id: "land-transportation",
     no: "02",
-    title: "Land Transportation",
-    subtitle: "Kargo Darat",
+    title: "Kargo Darat",
+    subtitle: "Pengiriman via truk",
     text: "Distribusi darat andal dengan jangkauan luas ke seluruh wilayah Indonesia melalui armada truk yang terawat dan pengemudi profesional.",
     points: [
       "Jangkauan luas ke kota besar hingga pelosok.",
       "Armada modern & terawat untuk keamanan kargo.",
-      "Layanan FTL & LTL yang fleksibel.",
+      "Muatan penuh (FTL) atau sebagian (LTL), fleksibel sesuai kebutuhan.",
     ],
     image: "/images/service-land.png",
     icon: "truck",
@@ -97,12 +97,12 @@ export const services: Service[] = [
   {
     id: "sea-cargo",
     no: "03",
-    title: "Sea Cargo",
-    subtitle: "Kargo Laut (FCL/LCL)",
-    text: "Layanan pengiriman laut FCL dan LCL yang efisien untuk berbagai kebutuhan bisnis Anda, termasuk antar pulau di seluruh wilayah Indonesia.",
+    title: "Kargo Laut",
+    subtitle: "Pengiriman via kapal (FCL/LCL)",
+    text: "Layanan pengiriman laut satu kontainer penuh (FCL) maupun gabungan (LCL) yang efisien untuk berbagai kebutuhan bisnis Anda, termasuk antar pulau di seluruh wilayah Indonesia.",
     points: [
-      "FCL & LCL fleksibel sesuai volume dan kebutuhan.",
-      "Jaringan pelayaran luas, domestik & internasional.",
+      "Kontainer penuh atau gabungan, sesuai volume dan kebutuhan.",
+      "Jaringan pelayaran luas, dalam domestik & internasional luar negeri.",
       "Layanan antar pulau ke seluruh Indonesia.",
     ],
     image: "/images/service-sea.jpg",
@@ -111,12 +111,12 @@ export const services: Service[] = [
   {
     id: "warehousing",
     no: "04",
-    title: "Warehousing",
-    subtitle: "Pergudangan",
-    text: "Penyimpanan aman dengan sistem manajemen inventori yang akurat untuk memastikan kargo siap distribusi kapan saja.",
+    title: "Pergudangan",
+    subtitle: "Penyimpanan barang",
+    text: "Penyimpanan aman dengan sistem manajemen stok yang akurat untuk memastikan kargo siap distribusi kapan saja.",
     points: [
       "Penyimpanan aman & terkontrol dengan fasilitas modern.",
-      "Manajemen inventori akurat & real-time.",
+      "Manajemen stok yang akurat dan selalu terkini.",
       "Siap distribusi cepat sesuai kebutuhan Anda.",
     ],
     image: "/images/service-warehouse.jpg",
@@ -137,7 +137,7 @@ export const reasons = [
   },
   {
     title: "Armada Terawat",
-    text: "Truk dalam kota dan luar kota yang terawat, dikemudikan driver profesional.",
+    text: "Truk dalam kota dan luar kota yang terawat, dikemudikan pengemudi profesional.",
     icon: "truck",
   },
   {
@@ -152,12 +152,6 @@ export const team = [
   { name: "Dewi Halimah Putri Hendri", role: "Kepala Kantor" },
   { name: "Riza Alpandi", role: "Koordinator Operasional" },
   { name: "Akhwatul", role: "Admin" },
-  { name: "Indra Nurman", role: "Driver Dalam Kota" },
-  { name: "Al Riski Defitra", role: "Driver Dalam Kota" },
-  { name: "Wira Pabrianto", role: "Driver Luar Kota" },
-  { name: "Faridz Ramadhan", role: "Driver Luar Kota" },
-  { name: "Heldy Rismansyah", role: "Freelance" },
-  { name: "Yuza Dimas Prayoga", role: "Freelance" },
 ];
 
 export const clients = [
